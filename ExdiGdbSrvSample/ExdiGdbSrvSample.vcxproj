@@ -26,25 +26,25 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -122,7 +122,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions);MIDL_OUTPUT=$(OutputPath);WIN32_LEAN_AND_MEAN</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\GdbSrvControllerLib;..\..\..\..\external\exdi;GeneratedSources</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedSources;GeneratedSources\x64\Release;..\GdbSrvControllerLib;</AdditionalIncludeDirectories>
     </ClCompile>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -135,12 +135,13 @@
       <TypeLibraryName>ExdiGdbSrvSample.tlb</TypeLibraryName>
       <DllDataFileName>
       </DllDataFileName>
-      <AdditionalIncludeDirectories>..\..\..\..\external\exdi</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedSources;GeneratedSources\x64\Release</AdditionalIncludeDirectories>
       <OutputDirectory>GeneratedSources</OutputDirectory>
+      <GenerateTypeLibrary>true</GenerateTypeLibrary>
     </Midl>
     <ResourceCompile>
       <Culture>0x0409</Culture>
-      <AdditionalIncludeDirectories>GeneratedSources;$(IntDir);%(AdditionalIncludeDirectories);;GeneratedSources\Debug</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedSources;$(IntDir);%(AdditionalIncludeDirectories);;GeneratedSources\Debug;GeneratedSources\x64\Release</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Link>
@@ -251,6 +252,7 @@
     <ClInclude Include="BasicExdiBreakpoint.h" />
     <ClInclude Include="ComHelpers.h" />
     <ClInclude Include="commandLogger.h" />
+    <ClInclude Include="dbgeng_exdi_io.h" />
     <ClInclude Include="dllmain.h" />
     <ClInclude Include="InterfaceMarshalHelper.h" />
     <ClInclude Include="LiveExdiGdbSrvSampleServer.h" />
@@ -270,6 +272,7 @@
     <None Include="LiveExdiGdbSrvSampleServer.rgs" />
   </ItemGroup>
   <ItemGroup>
+    <Midl Include="exdi3.idl" />
     <Midl Include="ExdiGdbSrvSample.idl" />
   </ItemGroup>
   <ItemGroup>
