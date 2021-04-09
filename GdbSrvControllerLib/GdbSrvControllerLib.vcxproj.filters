@@ -27,9 +27,6 @@
     <ClInclude Include="AsynchronousGdbSrvController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BufferWrapper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ExceptionHelpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -47,6 +44,9 @@
     </ClInclude>
     <ClInclude Include="cfgExdiGdbSrvHelper.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferWrapper.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
